@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bce0cfb2-a99b-4526-afc1-149c3bf724a0" name="local" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="E:\LeoLaki\CODE\PYTHON\stackone\call" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

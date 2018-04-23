@@ -1,0 +1,124 @@
+{% extends "layouts/base.html" %}
+{% block main %}
+    <div class="container">
+        <form method="POST" action="/api/giaodich/">
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4 p-md-5">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Id(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="id"
+                               placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Seri(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="seri"
+                               placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Loại F1000(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="loaif">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Loại tiền(*)</small>
+                        </label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="loaitien">
+                            <option>EURO</option>
+                            <option>USD</option>
+                            <option>VND</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Số ngoại tệ(*)</small>
+                        </label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="ngoaite">
+                            <option>1</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-block btn-info btn ">
+                        <small><a href="/xxx" class="save">Save</a></small>
+                    </button>
+                </div>
+                <div class="col-md-4 p-md-5">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+
+                        </label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Tỉ giá(*)</small>
+                        </label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="tigia">
+                            <option>1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Thành tiền(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="thanhtien">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Pháp nhân(*)</small>
+                        </label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="phapnhan">
+                            <option>1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Chủ đầu tư(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="chudutoan">
+                    </div>
+                </div>
+                <div class="col-md-4 p-md-5">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+
+                        </label>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Ngày hẹn(*)</small>
+                        </label>
+                        <input type="date" class="form-control" id="formGroupExampleInput" value="2017-06-01" name="ngayhen">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Vị trí(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="vitri">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Nội dung(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="noidung">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">
+                            <small class="text-secondary font-italic">Người hưởng(*)</small>
+                        </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="nguoihuong">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+{% endblock %}

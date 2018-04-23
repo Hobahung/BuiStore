@@ -1,0 +1,231 @@
+{% extends "layouts/base.html" %}
+{% block main %}
+    <div id="daphuongtien">
+        <div class="content">
+            <div class="slide">
+                <div class="jumbotron">
+                    <h1 class="display-4">Hello, world!</h1>
+                    <p class="lead">My name is Hung. I am 21 years old. I am from Topica Edtech Group.</p>
+                    <hr class="my-4">
+                    <p>This is my simple project . . . .</p>
+                    <button type="button" class="btn btn-outline-primary">Contact Me!</button>
+                </div>
+            </div>
+            <div>
+                <table class="table table">
+                    <tr class="otimkiem">
+                        <td colspan="2">
+                            <label for="exampleFormControlSelect1">
+                                <small class="text-secondary font-italic">Tìm kiếm :</small>
+                            </label>
+                        </td>
+                        <td colspan="14">
+                            <input class="form-control form-control-sm" type="text" id="keytimkiem">
+                        </td>
+                        <td>
+                            <button type="button"
+                                    class="btn-sm  btn form-control btn btn-outline-success "
+                                    onclick="getMax()">
+                                SEARCH
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="dptketqua"></tr>
+                    <tr>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">#</small>
+                        </th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Seri</small>
+                        </th>
+                        <th></th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Tên</small>
+                        </th>
+                        <th></th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Tác giả</small>
+                        </th>
+                        <th></th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Nhà xuất bản</small>
+                        </th>
+                        <th></th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Giá</small>
+                        </th>
+                        <th></th>
+                        <th scope="col">
+                            <small id="emailHelp" class="form-text text-muted">Số Lượng</small>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <form action="/create" method="post" class="">
+                        {% csrf_token %}
+                        <tr>
+                            <th scope="col">
+                            </th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="number" name="seri"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="text" name="ten"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="text" name="tacgia"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="text" name="nhaxuatban"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="number" name="gia"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+                                <small id="emailHelp" class="form-text text-muted"><input
+                                        class="form-control form-control-sm" type="text" name="soluong"></small>
+                            </th>
+                            <th></th>
+                            <th scope="col">
+
+                            </th>
+                            <th scope="col">
+                            <td colspan="2">
+                                <input class="btn btn-sm btn-outline-primary" type="submit" value="Thêm Sách Thư Viện"/>
+                            </td>
+                            </th>
+                        </tr>
+                    </form>
+                    <tr>
+                        <td colspan="7">
+                        </td>
+                        <td colspan="3">
+                            <label for="exampleFormControlSelect1">
+                                <small class="text-secondary font-bold">
+                                    DANH SÁCH SÁCH THƯ VIỆN
+                                </small>
+                            </label>
+                        </td>
+                        <td colspan="7">
+                        </td>
+                    </tr>
+
+
+                    <div class="data">
+                        {% for items in sachs %}
+                            <tr>
+                                <th scope="col">
+                                    <small id="emailHelp" class="form-text text-muted">{{ items.id }}</small>
+                                </th>
+                                <th scope="col">
+                                    <small id="emailHelp" class="form-text text-muted">{{ items.seri }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+                                    <small class="form-text text-muted item">{{ items.ten }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+                                    <small id="emailHelp" class="form-text text-muted">{{ items.tacgia }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+                                    <small id="emailHelp"
+                                           class="form-text text-muted">{{ items.nhaxuatban }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+                                    <small id="emailHelp" class="form-text text-muted">{{ items.gia }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+                                    <small id="emailHelp" class="form-text text-muted">{{ items.soluong }}</small>
+                                </th>
+                                <th></th>
+                                <th scope="col">
+
+                                </th>
+                                <th scope="col">
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info">Update
+                                    </button>
+                                </td>
+                                <td>
+                                    <a href="/delete/{{ items.seri }}">
+                                        <button class="btn btn-sm btn-outline-warning">Delete
+                                        </button>
+                                    </a>
+                                </td>
+                                </th>
+                            </tr>
+
+                        {% endfor %}
+                    </div>
+
+
+                </table>
+            </div>
+
+            <div class="inputhi">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary" class="xxx" onclick="myFunction()">
+                            SUBMIT
+                        </button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="You can input text!" id="input1">
+                    <input type="text" class="form-control" placeholder="You can input text!" id="input2">
+                </div>
+            </div>
+            <div class="tablehi">
+                <table class="table table-sm " id="myTable">
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% load static %}
+{% block scripts %}
+    <script src={% static 'js/script.js' %}></script>
+{% endblock %}

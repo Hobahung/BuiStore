@@ -1,0 +1,180 @@
+{% extends "layouts/base.html" %}
+{% block main %}
+
+    <div class="content">
+        <div class="danhsach">
+            <table class="table table">
+                <thead>
+                <tr>
+                    <td colspan="7">
+                    </td>
+                    <td>
+                        <div class="loader"></div>
+                    </td>
+                    <td colspan="7">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">#</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Seri</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Loại F1000</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Loại tiền</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Ngoại tệ</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Tỉ giá</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Thành tiền</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Pháp nhân</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Chủ DT</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Ngày hẹn</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Vị trí</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Info</small>
+                    </th>
+                    <th scope="col">
+                        <small id="emailHelp" class="form-text text-muted">Hưởng</small>
+                    </th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+
+
+
+
+
+                <tr>
+                    <td colspan="5">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Giao diện tìm kiếm :</small>
+                        </label>
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control form-control-sm" type="text">
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">
+                        <button type="button" class="btn-sm  btn btn-outline-info form-control btn btn-outline-secondary " id="tim">SEARCH</button>
+                    </td>
+                </tr>
+
+
+
+                <tbody id="timkiem">
+
+                </tbody>
+
+
+                <tr >
+                    <td colspan="7"></td>
+                    <td colspan="9">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-bold">
+                                DANH SÁCH GIAO DỊCH
+                            </small>
+                        </label>
+                    </td>
+                </tr>
+            <tr>
+                <td colspan="14"></td>
+            </tr>
+
+                <tbody id="content">
+
+                </tbody>
+
+
+                <tr>
+                    <td colspan="5">
+                        <label for="exampleFormControlSelect1">
+                            <small class="text-secondary font-italic">Giao diện thêm giao dịch. Vui lòng nhập mã chưa
+                                tồn tại :
+                            </small>
+                        </label>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">
+                        <button type="button" class="btn-sm  btn-block form-control btn btn-outline-secondary"
+                                id="mosua" value="Sa">
+                            OPEN ALL
+                        </button>
+                    </td>
+                </tr>
+
+                <tfoot>
+                <tr>
+                    <td><input class="form-control form-control-sm" type="text"></td>
+                    <td><input class="form-control form-control-sm" type="text"></td>
+                    <td>
+                        <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+                            {% for items in loaifs %}
+                                <option>{{ items.tengiaodich }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+                            {% for items in loaiTiens %}
+                                <option>{{ items.loai }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td><input class="form-control form-control-sm inputmot" id="inputmot" type="number" value="1000"></td>
+                    <td><input class="form-control form-control-sm inputhai" id="inputhai" type="number" value="2"></td>
+                    <td><input class="form-control form-control-sm inputba" id="inputba" type="number" readonly value="2000"></td>
+                    <td><input class="form-control form-control-sm" type="text"></td>
+                    <td><input class="form-control form-control-sm" type="text"></td>
+                    <td>
+
+                        <input type="date" class="form-control form-control-sm" name="ngayhen" value="2017-06-01">
+
+                    </td>
+                    <td><input class="form-control form-control-sm" type="text"></td>
+                    <td><input class="form-control form-control-sm" type="text">
+                    </td>
+                    <td><input class="form-control form-control-sm" type="text">
+                    </td>
+                    <td colspan="2">
+                        <button type="button" class="btn btn-primary btn-sm btn-save btn-block" id="add">THÊM</button>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% load static %}
+{% block scripts %}
+    <script src={% static 'js/script.js' %}></script>
+{% endblock %}
